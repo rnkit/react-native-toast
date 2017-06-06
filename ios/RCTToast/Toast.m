@@ -1,8 +1,13 @@
 #import <UIKit/UIKit.h>
-#import <React/RCTLog.h>
-#import <React/RCTBridgeModule.h>
 #import "Toast+UIView.h"
 
+#if __has_include(<React/RCTBridge.h>)
+#import <React/RCTLog.h>
+#import <React/RCTBridgeModule.h>
+#else
+#import "RCTLog.h"
+#import "RCTBridgeModule.h"
+#endif
 
 @interface Toast : NSObject <RCTBridgeModule>
 @end
